@@ -1,0 +1,11 @@
+<span *ngIf="loading">loading...</span>
+<div *ngIf="config" style="flex: 1 1 auto; display: flex; flex-direction: column;">
+    <md-input-container>
+      <input mdInput placeholder="App name" name="appName" [(ngModel)]="config.appName" required #appName="ngModel" />
+    </md-input-container>
+  <json-editor style="flex: 1 1 auto; display: flex;" [options]="options" [data]="config.config"></json-editor>
+  <div>
+    <button md-raised-button color="primary" (click)="save(config)" [disabled]="appName.errors">Save</button>
+    <button md-raised-button color="accent" (click)="goBack()">Cancel</button>
+  </div>
+</div>

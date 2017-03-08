@@ -1,0 +1,14 @@
+<md-toolbar color="primary">
+  <span>Configo</span>
+  <span style="flex: 1 1 auto;"></span>
+  <button md-icon-button (click)="createConfig()">
+    <md-icon>add</md-icon>
+  </button>
+  <button md-icon-button [style.color]="search ? 'red' : 'white'" (click)="search = !search">
+    <md-icon>search</md-icon>
+  </button>
+</md-toolbar>
+<md-input-container *ngIf="search">
+  <input mdInput placeholder="Search">
+</md-input-container>
+<router-outlet></router-outlet>

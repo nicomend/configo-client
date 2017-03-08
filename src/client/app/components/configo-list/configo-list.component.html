@@ -1,0 +1,15 @@
+<md-list>
+  <md-list-item *ngFor="let config of configo | async | select:'configo'">
+    <md-icon md-list-icon>settings application</md-icon>
+    <h3 md-line>{{config.appName}}</h3>
+    <p md-line>
+      <span> {{config._id}} </span>
+    </p>
+    <button md-icon-button md-raised-button color="primary" (click)="openConfig(config._id)">
+      <md-icon>edit</md-icon>
+    </button>
+    <button md-icon-button md-raised-button color="warn" (click)="openConfig(config._id)">
+      <md-icon>delete forever</md-icon>
+    </button>
+  </md-list-item>
+</md-list>
